@@ -55,16 +55,20 @@ public class RobotContainer {
     m_chassis.setDefaultCommand(
       Commands.run(
         () -> 
-          m_chassis.arcadeDrive(-m_gamepad.getRawAxis(1), -m_gamepad.getRawAxis(2)),
+          m_chassis.arcadeDrive(-m_gamepad.getRawAxis(1), -m_gamepad.getRawAxis(0)),
         m_chassis));
 
     Command autoCommand = Commands.sequence(
       new InstantCommand(() -> m_arm.setAngle(0), m_arm),
-      new DriveForDistance(-0.5, 12, m_chassis),
+      new DriveForDistance(-0.5, 6, m_chassis),
       new InstantCommand(() -> m_arm.setAngle(30), m_arm),
       new WaitCommand(0.5),
       new DriveUntilDistanceAway(0.5, 6, m_chassis),
-      new TurnDegrees(0.5, 180, m_chassis)
+      new TurnDegrees(0.5, 180, m_chassis),
+      new DriveForDistance(-0.5, 8, m_chassis),
+      new InstantCommand(() -> m_arm.setAngle(10), m_arm),
+      new WaitCommand(1.0),
+      new DriveForDistance(0.5, 12, m_chassis)
     );
 
     // To test commands, we can add them to the dashboard

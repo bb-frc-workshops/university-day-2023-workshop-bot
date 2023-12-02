@@ -1,6 +1,11 @@
 {
   "HALProvider": {
     "Other Devices": {
+      "XRPGyro": {
+        "header": {
+          "open": true
+        }
+      },
       "motorL": {
         "header": {
           "open": true
@@ -41,6 +46,13 @@
         "window": {
           "visible": true
         }
+      }
+    }
+  },
+  "NetworkTables": {
+    "transitory": {
+      "SmartDashboard": {
+        "open": true
       }
     }
   }
