@@ -1,0 +1,47 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "motorL": {
+        "header": {
+          "open": true
+        }
+      },
+      "motorR": {
+        "header": {
+          "open": true
+        }
+      },
+      "servo1": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Auto": "Command",
+      "/SmartDashboard/Drive Until 6in Away": "Command",
+      "/SmartDashboard/Lower Arm": "Command",
+      "/SmartDashboard/Raise Arm": "Command"
+    },
+    "windows": {
+      "/SmartDashboard/Auto": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/SmartDashboard/Lower Arm": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/SmartDashboard/Raise Arm": {
+        "window": {
+          "visible": true
+        }
+      }
+    }
+  }
+}
