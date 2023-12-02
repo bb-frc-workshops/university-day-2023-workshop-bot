@@ -59,12 +59,12 @@ public class RobotContainer {
         m_chassis));
 
     Command autoCommand = Commands.sequence(
-      m_lowerArm,
+      new InstantCommand(() -> m_arm.setAngle(0), m_arm),
       new DriveForDistance(-0.5, 12, m_chassis),
-      m_raiseArm,
+      new InstantCommand(() -> m_arm.setAngle(30), m_arm),
       new WaitCommand(0.5),
-      m_driveUntilDistance,
-      m_turn180
+      new DriveUntilDistanceAway(0.5, 6, m_chassis),
+      new TurnDegrees(0.5, 180, m_chassis)
     );
 
     // To test commands, we can add them to the dashboard
